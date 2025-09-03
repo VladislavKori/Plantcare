@@ -1,15 +1,18 @@
 .nav {
     width: 100%;
     display: flex;
-    background: gray;
+    background: var(--tg-theme-secondary-bg-color);
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
 
     &-link {
-        flex: 1;
+        font-family: var(--font-family);
+        color: var(--tg-theme-link-color);
+        text-decoration: none;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 16px;
+        flex: 1;
     }
 }

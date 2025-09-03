@@ -13,6 +13,11 @@ declare global {
             allows_write_to_pm: boolean;
             photo_url: string;
           }
+        };
+        themeParams: {
+          bg_color: string;
+          text_color: string;
+          secondary_bg_color: string;
         }
       }
     };

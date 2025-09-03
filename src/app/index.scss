@@ -4,11 +4,14 @@
   box-sizing: border-box;
 }
 
+body {
+  background: var(--tg-theme-bg-color);
+}
+
 .container {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
-  background: green;
 }
 
 :root {
