@@ -1,1 +1,3 @@
-export { NavigationBar } from "./NavigationBar"
+export { NavigationBar } from "./NavigationBar";
+export { PlantCard } from "./PlantCard";
+export { PlantList } from "./PlantList"
