@@ -1,0 +1,43 @@
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &-name {
+        color: white;
+        font-family: var(--font-family);
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &-tag {
+        color: white;
+        font-family: var(--font-family);
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+}
