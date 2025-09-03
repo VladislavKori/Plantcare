@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { User } from "@features/collection/ui";
+import { CollectionPlants, User } from "@features/collection/ui";
 
 export const CollectionPage: FC = () => {
     return (
-        <div>
+        <>
             <User />
-        </div>
+            <CollectionPlants />
+        </>
     )
 }
