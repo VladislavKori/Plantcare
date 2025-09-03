@@ -1,0 +1,29 @@
+.input {
+    background: var(--tg-theme-bg-color);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 18px;
+
+    &-ref {
+        font-family: var(--font-family);
+        color: var(--tg-theme-text-color);
+        width: 100%;
+        border: none;
+        background: none;
+        outline: none;
+        padding: 14px 0;
+    }
+
+    & .icon-left,
+    & .icon-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & svg {
+            fill: var(--tg-theme-text-color);
+        }
+    }
+}
