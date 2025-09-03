@@ -1,11 +1,18 @@
-import { FC, ReactNode } from "react";
+import { forwardRef } from "react";
+import { ButtonProp } from "./types";
+import clsx from "clsx";
+import styles from "./style.module.scss";
 
-interface IButtonProps {
-    children: ReactNode;
-}
-
-export const Button: FC<IButtonProps> = ({ children }) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProp>((props, ref) => {
     return (
-        <button>{children}</button>
+        <button 
+            className={clsx(
+                styles["button"]
+            )}
+            ref={ref} 
+            {...props}
+        >
+            {props.children}
+        </button>
     )
-}
+})
