@@ -4,3 +4,9 @@
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background: green;
+}
