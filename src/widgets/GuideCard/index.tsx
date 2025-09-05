@@ -2,8 +2,11 @@ import { FC } from "react";
 import { IGuideCardProps } from "./type";
 import styles from "./style.module.scss";
 import { Button } from "@shared/ui";
+import { useNavigate } from "react-router-dom";
 
 export const GuideCard: FC<IGuideCardProps> = (props) => {
+    const navigate = useNavigate();
+
     return (
         <div className={styles["card"]}>
             <div className={styles["card-image"]}>
@@ -13,7 +16,7 @@ export const GuideCard: FC<IGuideCardProps> = (props) => {
                 <h2 className={styles["card-name"]}>{props.title}</h2>
                 <p className={styles["card-text"]}>{props.description}</p>
                 <div className={styles["card-buttons"]}>
-                    <Button>Reeeead</Button>
+                    <Button onClick={() => navigate(`/guide/${props.id}`)}>Reeeead</Button>
                 </div>
             </div>
         </div>

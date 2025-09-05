@@ -2,7 +2,9 @@ import {
     NotFoundPage,
     HomePage,
     CollectionPage,
-    GuidesPage
+    GuidesPage,
+    GuidePage,
+    PlantPage
 } from "@pages/index";
 import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -14,7 +16,9 @@ export const AppRouter: FC = () => {
             <Routes>
                 <Route element={<DefaultLayout />}>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/plant/:id" element={<PlantPage />} />
                     <Route path="/guides" element={<GuidesPage />} />
+                    <Route path="/guide/:id" element={<GuidePage />} />
                     <Route path="/collection" element={<CollectionPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
