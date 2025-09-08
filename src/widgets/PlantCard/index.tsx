@@ -11,7 +11,7 @@ export interface IPlantCard {
 }
 
 export const PlantCard: FC<IPlantCard> = (props) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     
     return (
         <div className={styles["card"]}>
