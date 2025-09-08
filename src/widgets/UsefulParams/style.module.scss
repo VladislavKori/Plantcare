@@ -1,0 +1,26 @@
+.useful {
+    background: var(--tg-theme-section-bg-color);
+    border-radius: 14px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 8px;
+
+    &-section {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &-title {
+        color: var(--tg-theme-hint-color);
+        font-family: var(--font-family);
+        font-size: 12px;
+    }
+
+    &-value {
+        color: var(--tg-theme-text-color);
+        font-family: var(--font-family);
+    }
+}
