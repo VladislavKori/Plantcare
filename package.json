@@ -17,6 +17,7 @@
     "react-router-dom": "^6.27.0",
     "remark-gfm": "^4.0.1",
     "sass": "^1.80.6",
+    "swiper": "^11.2.10",
     "vite-plugin-svgr": "^4.5.0"
   },
   "devDependencies": {
