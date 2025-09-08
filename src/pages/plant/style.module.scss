@@ -1,0 +1,14 @@
+.plant {
+
+    &-name {
+        color: var(--tg-theme-text-color);
+        font-family: var(--font-family);
+        font-size: 24px;
+    }
+
+    &-description {
+        color: var(--tg-theme-text-color);
+        font-family: var(--font-family);
+        font-size: 14px;
+    }
+}
