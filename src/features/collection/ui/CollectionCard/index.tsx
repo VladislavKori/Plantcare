@@ -1,10 +1,9 @@
-import { Button, Spinner } from "@shared/ui";
+import { Spinner } from "@shared/ui";
 import { db } from "@shared/utils/firebase";
 import { doc } from "firebase/firestore";
 import { FC } from "react";
 import { useDocument } from "react-firebase-hooks/firestore";
 import styles from "./style.module.scss";
-import { ImageSlider } from "@widgets/ImageSlider";
 import { Link } from "react-router-dom";
 
 interface ICollectionCardProps {
