@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding: 8px;
+    background: var(--tg-theme-section-bg-color);
+    border-radius: 14px;
+    gap: 12px;
+
+    &-image {
+        height: 130px;
+        aspect-ratio: 1 / 1;
+        background-position: center;
+        background-size: cover;
+        border-radius: 14px;
+    }
+
+    &-title {
+        font-family: var(--font-family);
+        color: var(--tg-theme-text-color);
+    }
+}
