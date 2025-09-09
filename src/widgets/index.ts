@@ -6,3 +6,4 @@ export { GuideList } from "./GuideList";
 export { ImageSlider } from "./ImageSlider";
 export { UsefulParams } from "./UsefulParams";
 export { Markdown } from "./Markdown";
+export { BackHead } from "./BackHead";
