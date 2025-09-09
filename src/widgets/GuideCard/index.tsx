@@ -13,10 +13,12 @@ export const GuideCard: FC<IGuideCardProps> = (props) => {
                 <img src={props.previewURL} />
             </div>
             <div className={styles["card-info"]}>
-                <h2 className={styles["card-name"]}>{props.title}</h2>
+                <h2 className={styles["card-name"]}>{props.name}</h2>
                 <p className={styles["card-text"]}>{props.description}</p>
                 <div className={styles["card-buttons"]}>
-                    <Button onClick={() => navigate(`/guide/${props.id}`)}>Reeeead</Button>
+                    <Button onClick={() => navigate(`/guide/${props.id}`)}>
+                        Читать
+                    </Button>
                 </div>
             </div>
         </div>

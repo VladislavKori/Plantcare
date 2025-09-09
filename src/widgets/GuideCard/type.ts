@@ -1,8 +1,9 @@
 export interface IGuideCard {
     id: string;
-    title: string;
-    description: string;
     previewURL: string;
+    name: string;
+    description: string;
+    content: string;
     created_at: string;
 }
 
