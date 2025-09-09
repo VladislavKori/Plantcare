@@ -6,11 +6,18 @@ import {
     GuidePage,
     PlantPage
 } from "@pages/index";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DefaultLayout } from "../layouts/DefaultLayout";
+import { useCollectionStore } from "@entities/collection/model";
 
 export const AppRouter: FC = () => {
+    const {loadCollection} = useCollectionStore();
+
+    useEffect(() => {
+        loadCollection()
+    }, [])
+
     return (
         <BrowserRouter>
             <Routes>
