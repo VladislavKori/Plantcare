@@ -12,7 +12,7 @@ export const NavigationBar: FC = () => {
                 }
                 to="/guides"
             >
-                Guides
+                Статьи
             </NavLink>
             <NavLink
                 className={({ isActive }) =>
@@ -20,7 +20,7 @@ export const NavigationBar: FC = () => {
                 }
                 to="/"
             >
-                Plants
+                Растения
             </NavLink>
             <NavLink
                 className={({ isActive }) =>
@@ -28,7 +28,7 @@ export const NavigationBar: FC = () => {
                 }
                 to="/collection"
             >
-                Collection
+                Коллекция
             </NavLink>
         </div>
     )
