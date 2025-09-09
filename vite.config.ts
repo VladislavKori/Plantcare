@@ -29,7 +29,11 @@ export default defineConfig({
       {
         find: "@features",
         replacement: "/src/features"
-      }
+      },
+      {
+        find: "@entities",
+        replacement: "/src/entities"
+      },
     ]
   }
 })
