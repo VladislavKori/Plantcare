@@ -1,14 +1,25 @@
 import { FC } from "react";
-import { Input } from "@shared/ui";
+import { Input, Spinner } from "@shared/ui";
 import SearchIcon from "@shared/assets/search.svg?react"
 import { PlantList } from "@widgets/PlantList";
-import { plantList } from "./mock";
+import { usePlants } from "@features/plants/hooks/usePlants";
+import styles from "./style.module.scss";
 
 export const HomePlants: FC = () => {
+    const { plants, loading, error, filter, setFilter } = usePlants();
+
+    if (loading) return <div className={styles["loading"]}><Spinner /></div>
+    if (error) return <p>Произошла ошибка</p>
+
     return (
         <>
-            <Input placeholder="Search" startContent={<SearchIcon />} />
-            <PlantList data={plantList} />
+            <Input
+                placeholder="Поиск"
+                startContent={<SearchIcon />}
+                value={filter}
+                onChange={e => setFilter(e.target.value)}
+            />
+            <PlantList data={plants} />
         </>
     )
 }
