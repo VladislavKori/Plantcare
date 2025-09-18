@@ -7,8 +7,8 @@ export const CollectionPlants: FC = () => {
 
     return (
         <>
-            {collectionStore.collectionIDs.map(id => (
-                <CollectionCard id={id} />
+            {collectionStore.collectionIDs.map(item => (
+                <CollectionCard id={item.id} last_watering={item.last_watering} />
             ))}
         </>
     )

@@ -3,13 +3,17 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { create } from "zustand"
 
 interface CollectionState {
-    collectionIDs: string[];
+    collectionIDs: {
+        id: string,
+        last_watering: string
+    }[];
     loading: boolean;
     userID: number | undefined;
     loadCollection: () => void;
     plantIDExistInCollection: (id: string) => boolean;
     addToCollection: (id: string) => void;
     removeFromCollection: (id: string) => void;
+    markWatering: (id: string) => void;
 }
 
 const useCollectionStore = create<CollectionState>((set, get) => ({
@@ -39,19 +43,28 @@ const useCollectionStore = create<CollectionState>((set, get) => ({
     addToCollection: (id: string) => {
         const { userID, collectionIDs } = get();
         const collectionRef = doc(db, "collections", `user_${userID}`)
-        setDoc(collectionRef, { plantIDs: [id, ...collectionIDs] })
-        set(state => ({ collectionIDs: [id, ...state.collectionIDs] }))
+        setDoc(collectionRef, { plantIDs: [{ id, last_watering: Date() }, ...collectionIDs] })
+        set(state => ({ collectionIDs: [{ id, last_watering: Date() }, ...state.collectionIDs] }))
     },
     removeFromCollection: (id: string) => {
         const { userID, collectionIDs } = get();
         const collectionRef = doc(db, "collections", `user_${userID}`)
-        setDoc(collectionRef, { plantIDs: [...collectionIDs.filter(el => el !== id)] })
-        set(state => ({ collectionIDs: [...state.collectionIDs.filter(el => el !== id)] }))
+        setDoc(collectionRef, { plantIDs: [...collectionIDs.filter(el => el.id !== id)] })
+        set(state => ({ collectionIDs: [...state.collectionIDs.filter(el => el.id !== id)] }))
     },
     plantIDExistInCollection: (id: string) => {
         const { collectionIDs } = get();
-        return collectionIDs.includes(id);
+        return collectionIDs.some(el => el.id === id);
     },
+    markWatering: (id: string) => {
+        const { userID, collectionIDs } = get();
+        const collectionRef = doc(db, "collections", `user_${userID}`)
+        setDoc(collectionRef, { plantIDs: [...collectionIDs.map(el => {
+            if (el.id === id) el.last_watering = Date();
+            return el
+        })] })
+        set(() => ({ collectionIDs: collectionIDs }))
+    }
 }))
 
 export { useCollectionStore }
