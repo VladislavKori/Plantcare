@@ -1,7 +1,7 @@
 .card {
     display: flex;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     padding: 8px;
     background: var(--tg-theme-section-bg-color);
     border-radius: 14px;
@@ -18,5 +18,11 @@
     &-title {
         font-family: var(--font-family);
         color: var(--tg-theme-text-color);
+    }
+
+    &-text {
+        font-family: var(--font-family);
+        color: var(--tg-theme-text-color);
+        font-size: 14px;
     }
 }
