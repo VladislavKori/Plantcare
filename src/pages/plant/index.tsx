@@ -42,29 +42,41 @@ export const PlantPage: FC = () => {
 
     return (
         <>
-            <BackHead />
+            <BackHead
+                id={value?.data()?.id}
+                name={value?.data()?.name}
+            />
             <ImageSlider
                 images={value?.data()?.imageURLs}
             />
+            <div className={styles["plant-text-block"]}>
+                <div className={styles["plant-info"]}>
+                    <h2 className={styles["plant-name"]}>{value?.data()?.name}</h2>
+                    <p className={styles["plant-hint"]}>Indoor plant</p>
+                </div>
+                {/* <button>AI Chat</button> */}
+            </div>
             <UsefulParams
-                light={value?.data()?.params.light}
-                temp={value?.data()?.params.temp}
-                water={value?.data()?.params.water}
+                lighting={value?.data()?.params.light}
+                temperature={value?.data()?.params.temp}
+                humidity={value?.data()?.params.water}
             />
-            <h2 className={styles["plant-name"]}>{value?.data()?.name}</h2>
-            <p className={styles["plant-description"]}>{value?.data()?.description}</p>
-            {collectionStore.plantIDExistInCollection(params.id) ? (
-                <Button fullWidth onClick={() => collectionStore.removeFromCollection(params.id as string)}>
-                    Удалить из коллекции
-                </Button>
-            ) : (
-                <Button fullWidth onClick={() => collectionStore.addToCollection(params.id as string)}>
-                    Добавить в Коллекцию
-                </Button>
-            )}
+
             <Markdown>
                 {value?.data()?.content}
             </Markdown>
+
+            <div className={styles["plant-action"]}>
+                {collectionStore.plantIDExistInCollection(params.id) ? (
+                    <Button fullWidth onClick={() => collectionStore.removeFromCollection(params.id as string)}>
+                        Remove from garden
+                    </Button>
+                ) : (
+                    <Button fullWidth onClick={() => collectionStore.addToCollection(params.id as string)}>
+                        Add to garden
+                    </Button>
+                )}
+            </div>
         </>
     )
 }

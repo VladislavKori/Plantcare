@@ -1,14 +1,31 @@
 .plant {
 
     &-name {
-        color: var(--tg-theme-text-color);
+        color: var(--text-color);
         font-family: var(--font-family);
         font-size: 24px;
+        font-weight: 600;
     }
 
-    &-description {
-        color: var(--tg-theme-text-color);
+    &-hint {
+        color: var(--hint-color);
         font-family: var(--font-family);
         font-size: 14px;
+        font-weight: 400;
+    }
+
+    &-action {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, #fff 100%);
+    }
+
+    &-text-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
