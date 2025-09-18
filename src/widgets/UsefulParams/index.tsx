@@ -1,35 +1,48 @@
 import { FC } from "react";
 import styles from "./style.module.scss";
+import SunIcon from "@shared/assets/icons/sun.svg?react";
+import TempIcon from "@shared/assets/icons/drop.svg?react";
+import HumidityIcon from "@shared/assets/icons/flash.svg?react";
+import clsx from "clsx";
 
 interface UsefulParams {
-    light?: string;
-    temp?: string;
-    water?: string;
+    lighting: string;
+    humidity: string;
+    temperature: string;
 }
 
 export const UsefulParams: FC<UsefulParams> = (props) => {
-    if (!props.light && !props.temp && !props.water) return null;
-
     return (
         <div className={styles["useful"]}>
-            {props.light && (
-                <div className={styles["useful-section"]}>
-                    <p className={styles["useful-title"]}>Свет</p>
-                    <p className={styles["useful-value"]}>{props.light}</p>
+            <div className={styles["useful-section"]}>
+                <div className={clsx(styles["useful-icon-box"], styles["useful-red"])}>
+                    <SunIcon />
                 </div>
-            )}
-            {props.temp && (
-                <div className={styles["useful-section"]}>
-                    <p className={styles["useful-title"]}>Темп.</p>
-                    <p className={styles["useful-value"]}>{props.temp}</p>
+                <div className={styles["useful-info"]}>
+                    <p className={styles["useful-value"]}>{props.lighting}</p>
+                    <p className={styles["useful-title"]}>Lighting</p>
                 </div>
-            )}
-            {props.water && (
-                <div className={styles["useful-section"]}>
-                    <p className={styles["useful-title"]}>Вода</p>
-                    <p className={styles["useful-value"]}>{props.water}</p>
+            </div>
+
+            <div className={styles["useful-section"]}>
+                <div className={clsx(styles["useful-icon-box"], styles["useful-yellow"])}>
+                    <TempIcon />
                 </div>
-            )}
+                <div className={styles["useful-info"]}>
+                    <p className={styles["useful-value"]}>{props.temperature}</p>
+                    <p className={styles["useful-title"]}>Temperature</p>
+                </div>
+            </div>
+
+            <div className={styles["useful-section"]}>
+                <div className={clsx(styles["useful-icon-box"], styles["useful-blue"])}>
+                    <HumidityIcon />
+                </div>
+                <div className={styles["useful-info"]}>
+                    <p className={styles["useful-value"]}>{props.humidity}</p>
+                    <p className={styles["useful-title"]}>Humidity</p>
+                </div>
+            </div>
         </div>
     )
 }
