@@ -5,7 +5,6 @@ import { FC } from "react";
 import { useDocument } from "react-firebase-hooks/firestore";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
-import { formatDate } from "@shared/utils/time";
 import { useCollectionStore } from "@entities/collection/model";
 
 interface ICollectionCardProps {

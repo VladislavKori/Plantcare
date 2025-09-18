@@ -7,7 +7,7 @@ import { useDocument } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 import { db } from "@shared/utils/firebase";
 import { Spinner } from "@shared/ui";
-import { BackHead } from "@widgets/BackHead";
+// import { BackHead } from "@widgets/BackHead";
 
 export const GuidePage: FC = () => {
     const params = useParams<{ id: string }>()
@@ -25,7 +25,7 @@ export const GuidePage: FC = () => {
 
     return (
         <>
-            <BackHead />
+            {/* <BackHead  /> */}
             <h2 className={styles["guide-name"]}>{value?.data()?.name}</h2>
             <Markdown>
                 {value?.data()?.content}

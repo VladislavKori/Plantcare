@@ -1,5 +1,4 @@
 import { FC } from "react";
-import styles from "./style.module.scss";
 import { HomePlants } from "@features/plants/ui";
 
 export const HomePage: FC = () => {
