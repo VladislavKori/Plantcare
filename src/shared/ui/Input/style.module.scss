@@ -1,5 +1,5 @@
 .input {
-    background: var(--tg-theme-bg-color);
+    background: var(--section-color);
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@
 
     &-ref {
         font-family: var(--font-family);
-        color: var(--tg-theme-text-color);
+        color: var(--text-color);
         width: 100%;
         border: none;
         background: none;
@@ -23,7 +23,7 @@
         align-items: center;
 
         & svg {
-            fill: var(--tg-theme-text-color);
+            fill: var(--text-color);
         }
     }
 }
