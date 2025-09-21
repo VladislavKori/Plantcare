@@ -1,17 +1,25 @@
 .user {
-    display: flex;
-    align-items: center;
-    gap: 8px;
     width: 100%;
-    background: var(--tg-theme-bg-color);
+    background: var(--section-color);
     border-radius: 14px;
     padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+
+    &-left,
+    &-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
 
     &-avatar {
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        background: var(--tg-theme-header-bg-color);
+        background: var(--text-color);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -31,17 +39,23 @@
     }
 
     &-name {
-        color: var(--tg-theme-text-color);
+        color: var(--text-color);
         font-family: var(--font-family);
         font-size: 16px;
         font-weight: 500;
     }
 
     &-tag {
-        color: var(--tg-theme-hint-color);
+        color: var(--hint-color);
         font-family: var(--font-family);
         font-size: 12px;
         font-weight: 400;
         opacity: 0.8;
+    }
+
+    &-settings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
