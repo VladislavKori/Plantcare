@@ -1,0 +1,27 @@
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-name {
+        font-family: var(--font-family);
+        text-transform: capitalize;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+    &-button {
+        background: var(--section-color);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        & svg {
+            width: 20px;
+        }
+    }
+}

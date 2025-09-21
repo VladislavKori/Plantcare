@@ -1,5 +1,5 @@
 .card {
-    background: var(--tg-theme-bg-color);
+    background: var(--section-color);
     border-radius: 14px;
     overflow: hidden;
 
@@ -22,13 +22,13 @@
 
     &-name {
         font-family: var(--font-family);
-        color: var(--tg-theme-text-color);
+        color: var(--text-color);
         font-size: 20px;
     }
 
     &-text {
         font-family: var(--font-family);
-        color: var(--tg-theme-hint-color);
+        color: var(--hint-color);
         font-size: 14px;
     }
 

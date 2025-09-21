@@ -1,13 +1,13 @@
 .guide {
 
     &-name {
-        color: var(--tg-theme-text-color);
+        color: var(--text-color);
         font-family: var(--font-family);
         font-size: 24px;
     }
 
     &-date {
-        color: var(--tg-theme-hint-color);
+        color: var(--hint-color);
         font-family: var(--font-family);
         font-size: 14px;
     }

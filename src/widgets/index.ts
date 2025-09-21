@@ -7,3 +7,4 @@ export { ImageSlider } from "./ImageSlider";
 export { UsefulParams } from "./UsefulParams";
 export { Markdown } from "./Markdown";
 export { BackHead } from "./BackHead";
+export { GuideBackHead } from "./GuideBackHead";
