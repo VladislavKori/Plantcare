@@ -8,9 +8,12 @@ import { doc } from "firebase/firestore";
 import { db } from "@shared/utils/firebase";
 import { Spinner } from "@shared/ui";
 import { GuideBackHead } from "@widgets/GuideBackHead";
+import { useTranslation } from "react-i18next";
 
 export const GuidePage: FC = () => {
     const params = useParams<{ id: string }>()
+    const { i18n, t } = useTranslation("", { keyPrefix: "guide" });
+    const { t: commonT } = useTranslation("", { keyPrefix: "common" });
 
     const [value, loading, error] = useDocument(
         doc(db, 'guides', `guide_${params.id}`),
@@ -20,17 +23,19 @@ export const GuidePage: FC = () => {
     );
 
     if (loading) return <Spinner />
-    if (error) return <p>Ошибка</p>
-    if (value?.data() === undefined) return <p>Статья не найдена</p>
+    if (error) return <p>{commonT("error")}</p>
+    if (value?.data() === undefined) return <p>{t("not-found")}</p>
 
     return (
         <>
-            <GuideBackHead  />
-            <h2 className={styles["guide-name"]}>{value?.data()?.name}</h2>
+            <GuideBackHead />
+            <h2 className={styles["guide-name"]}>
+                {value?.data()?.[i18n.language === "ru" ? "name" : "nameEn"]}
+            </h2>
             <Markdown>
-                {value?.data()?.content}
+                {value?.data()?.[i18n.language === "ru" ? "content" : "contentEn"]}
             </Markdown>
-            <p className={styles["guide-date"]}>Опубликовано: {formatDate(value?.data()?.created_at)}</p>
+            <p className={styles["guide-date"]}>{t("public")}: {formatDate(value?.data()?.created_at)}</p>
         </>
     )
 }

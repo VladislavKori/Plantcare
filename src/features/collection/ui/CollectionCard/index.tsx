@@ -10,6 +10,7 @@ import SunIcon from "@shared/assets/icons/sun.svg?react";
 import TempIcon from "@shared/assets/icons/drop.svg?react";
 import HumidityIcon from "@shared/assets/icons/flash.svg?react";
 import { useCollectionStore } from "@entities/collection/model";
+import { useTranslation } from "react-i18next";
 
 interface ICollectionCardProps {
     id: string;
@@ -19,6 +20,8 @@ interface ICollectionCardProps {
 }
 
 export const CollectionCard: FC<ICollectionCardProps> = (props) => {
+    const { t, i18n } = useTranslation("", { keyPrefix: "collection" })
+    const { t: commonT } = useTranslation("", { keyPrefix: "common" })
     const { markCheckIn } = useCollectionStore()
     const [value, loading, error] = useDocument(
         doc(db, 'plants', `plant_${props.id}`),
@@ -36,7 +39,7 @@ export const CollectionCard: FC<ICollectionCardProps> = (props) => {
     }
 
     if (loading) return <Spinner />
-    if (error) return <p>Ошибка</p>
+    if (error) return <p>{commonT("error")}</p>
 
     return (
         <div className={styles["card"]}>
@@ -46,8 +49,10 @@ export const CollectionCard: FC<ICollectionCardProps> = (props) => {
                     style={{ backgroundImage: `url("${value?.data()?.imageURLs[0]}")` }}
                 ></div>
                 <div>
-                    <h2 className={styles["card-title"]}>{value?.data()?.name}</h2>
-                    <p className={styles["card-text"]}>Статус</p>
+                    <h2 className={styles["card-title"]}>
+                        {value?.data()?.[i18n.language === "ru" ? "name" : "nameEn"]}
+                    </h2>
+                    <p className={styles["card-text"]}>{t("status")}</p>
                 </div>
             </div>
             <div className={styles["card-params"]}>

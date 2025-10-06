@@ -4,6 +4,7 @@ import SunIcon from "@shared/assets/icons/sun.svg?react";
 import TempIcon from "@shared/assets/icons/drop.svg?react";
 import HumidityIcon from "@shared/assets/icons/flash.svg?react";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 interface UsefulParams {
     lighting: string;
@@ -12,6 +13,8 @@ interface UsefulParams {
 }
 
 export const UsefulParams: FC<UsefulParams> = (props) => {
+    const { t } = useTranslation("", { keyPrefix: "plant"})
+
     return (
         <div className={styles["useful"]}>
             <div className={styles["useful-section"]}>
@@ -20,7 +23,7 @@ export const UsefulParams: FC<UsefulParams> = (props) => {
                 </div>
                 <div className={styles["useful-info"]}>
                     <p className={styles["useful-value"]}>{props.lighting}</p>
-                    <p className={styles["useful-title"]}>Lighting</p>
+                    <p className={styles["useful-title"]}>{t("lighting")}</p>
                 </div>
             </div>
 
@@ -30,7 +33,7 @@ export const UsefulParams: FC<UsefulParams> = (props) => {
                 </div>
                 <div className={styles["useful-info"]}>
                     <p className={styles["useful-value"]}>{props.temperature}</p>
-                    <p className={styles["useful-title"]}>Temperature</p>
+                    <p className={styles["useful-title"]}>{t("temp")}</p>
                 </div>
             </div>
 
@@ -40,7 +43,7 @@ export const UsefulParams: FC<UsefulParams> = (props) => {
                 </div>
                 <div className={styles["useful-info"]}>
                     <p className={styles["useful-value"]}>{props.humidity}</p>
-                    <p className={styles["useful-title"]}>Humidity</p>
+                    <p className={styles["useful-title"]}>{t("humidity")}</p>
                 </div>
             </div>
         </div>

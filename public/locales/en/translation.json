@@ -1,5 +1,40 @@
 {
     "common": {
-        "language": "English"
+        "language": "English",
+        "error": "Error"
+    },
+    "settings": {
+        "title": "Settings",
+        "lang": "Language"
+    },
+    "collection": {
+        "title": "Plants",
+        "add-plant": "Add plant",
+        "not-found": "👀 No plants found",
+        "status": "Status"
+    },
+    "plant": {
+        "not-found": "Plant not found",
+        "indoor-plant": "Indoor plant",
+        "lighting": "Light",
+        "temp": "Temperature",
+        "humidity": "Humidity",
+        "remove-from-garden": "Remove from garden",
+        "add-from-garden": "Add to garden"
+    },
+    "list": {
+        "search": "Search",
+        "not-found": "Nothing found",
+        "indoor-plant": "Indoor plant"
+    },
+    "guides": {
+        "title": "Articles",
+        "subtitle": "Here you will find useful articles about plants and how to care for them",
+        "search": "Search",
+        "read": "Read"
+    },
+    "guide": {
+        "public": "Published",
+        "not-found": "Article not found"
     }
 }

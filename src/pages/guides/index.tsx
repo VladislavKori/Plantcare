@@ -1,13 +1,16 @@
 import { FC } from "react";
 import styles from "./style.module.scss";
 import { GuidesTable } from "@features/guides/ui";
+import { useTranslation } from "react-i18next";
 
 export const GuidesPage: FC = () => {
+    const { t } = useTranslation("", { keyPrefix: "guides" })
+
     return (
         <>
-            <h2 className={styles["title"]}>Статьи</h2>
-            <p className={styles["subtitle"]}>Здесь вы найдете полезные статьи о растениях и уходе за ними.</p>
+            <h2 className={styles["title"]}>{t("title")}</h2>
+            <p className={styles["subtitle"]}>{t("subtitle")}</p>
             <GuidesTable />
         </>
     )
-}
+}   

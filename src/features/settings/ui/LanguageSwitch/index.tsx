@@ -12,7 +12,7 @@ export const LanguageSwitch: FC = () => {
 
     return (
         <div className={styles["row"]}>
-            <p className={styles["title"]}>Язык</p>
+            <p className={styles["title"]}>{t("settings.lang")}</p>
             <Dropdown side="right" closeTrigger={closeTrigger}>
                 <DropdownTrigger>
                     <p className={styles["lang"]}>{t("common.language")}</p>
