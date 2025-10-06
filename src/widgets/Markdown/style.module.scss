@@ -3,8 +3,16 @@
     font-family: var(--font-family);
     font-size: 14px;
 
+    hr {
+        margin: 14px 0;
+    }
+
     & ul,
     & ol {
         padding-left: 18px;
+    }
+
+    & * {
+        margin: 4px 0
     }
 }
