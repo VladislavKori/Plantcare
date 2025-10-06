@@ -4,7 +4,8 @@ import {
     CollectionPage,
     GuidesPage,
     GuidePage,
-    PlantPage
+    PlantPage,
+    SettingPage
 } from "@pages/index";
 import { FC, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -27,6 +28,7 @@ export const AppRouter: FC = () => {
                     <Route path="/guides" element={<GuidesPage />} />
                     <Route path="/guide/:id" element={<GuidePage />} />
                     <Route path="/collection" element={<CollectionPage />} />
+                    <Route path="/settings" element={<SettingPage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
                 <Route element={<WithoutNavbarLayout />}>
