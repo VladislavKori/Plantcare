@@ -1,0 +1,37 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.button {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: none;
+    color: var(--text-color);
+
+    &-active {
+        background: var(--accent-color);
+        color: var(--background-color)
+    }
+}
+
+.lang {
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    cursor: pointer;
+}
