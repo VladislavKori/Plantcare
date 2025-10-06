@@ -21,7 +21,12 @@ export const CollectionPlants: FC = () => {
                 </div>
             )}
             {collectionStore.collectionIDs.map(item => (
-                <CollectionCard id={item.id} last_watering={item.last_watering} />
+                <CollectionCard 
+                    id={item.id} 
+                    last_watering={item.last_watering} 
+                    last_sun_check={item.last_sun_check}
+                    last_humidity_check={item.last_humidity_check}
+                />
             ))}
         </div>
     )
