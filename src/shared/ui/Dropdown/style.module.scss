@@ -1,0 +1,33 @@
+.dropdown {
+    position: relative;
+    width: max-content;
+
+    &-menu {
+        position: absolute;
+        pointer-events: none;
+        top: 100%;
+        z-index: 2;
+
+        &.active {
+            pointer-events: all;
+        }
+
+        &-side {
+            &-left { left: 0; }
+            &-right { right:0; }
+            &-center { left: 50%; transform: translateX(-50%) !important;}
+        }
+    }
+}
+
+.menu {
+    background: var(--section-color);
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    padding: 10px;
+    min-width: 180px;
+}
+
+.item {
+    font-family: var(--font-family);
+}
